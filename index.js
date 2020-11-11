@@ -37,7 +37,7 @@ client.on('message', (message) => {
     if(message.content == '비니야 뭐해') {
       return message.reply('너 생각');
     }
-    if(message.content == '비니야 잘자') {
+    if(message.content == '비니야 잘 자') {
       return message.reply('웅 너도 잘 자');
     }
 
