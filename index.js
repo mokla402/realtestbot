@@ -37,6 +37,9 @@ client.on('message', (message) => {
     if(message.content == '비니야 뭐해') {
       return message.reply('너 생각');
     }
+    if(message.content == '비니야 잘자') {
+      return message.reply('웅 너도 잘 자');
+    }
 
   if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
