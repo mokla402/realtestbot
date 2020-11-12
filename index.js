@@ -27,21 +27,6 @@ client.on("guildMemberRemove", (member) => {
 
   byeChannel.send(`<@${deleteUser.id}> ${byeChannelComment}\n`);
 });
-client.on('message', message => {
-    
-  let foods = ["족발", "피자", "치킨", "진라면", "짜파게티", "파스타", "스테이크", "마라흑당치즈민트초코칩쿠키", "크레이프 케이크", "짜장면", "짬뽕", "허니버터흑당마라치즈불닭민트초코순대국밥", "마라허니민트초코칩쿠키", "된장국", "보리밥", "산낙지", "도토리묵", "쭈꾸미", "참깨빵 위에 순 쇠고기 패티 두장, 특별한 소스 양상추 치즈 피클 양파까지", "포카칩", "부대찌개", "해리포터젤리빈", "도토리", "떡볶이", "곤드레비빔밥", "초밥"]
-
-  if (message.content.startsWith(`${prefix}뭐먹지`)) {
-      let rand = Math.floor(Math.random() * foods.length);
-      message.reply(`${foods[rand]} 어떰?`);
-  };
-
-  if (message.content.startsWith(`${prefix}음식추가`)) {
-      let addedFood = message.content.split(`${prefix}음식추가 `)[1];
-      foods.push(addedFood);
-      message.reply(`${addedFood} 를 추가했습니다!`);
-  };
-});
 
 client.on('message', (message) => {
   if(message.author.bot) return;
@@ -55,6 +40,21 @@ client.on('message', (message) => {
     if(message.content == '비니야 잘 자') {
       return message.reply('웅 너도 잘 자');
     }
+    client.on('message', message => {
+    
+      let foods = ["족발", "피자", "치킨", "진라면", "짜파게티", "파스타", "스테이크", "마라흑당치즈민트초코칩쿠키", "크레이프 케이크", "짜장면", "짬뽕", "허니버터흑당마라치즈불닭민트초코순대국밥", "마라허니민트초코칩쿠키", "된장국", "보리밥", "산낙지", "도토리묵", "쭈꾸미", "참깨빵 위에 순 쇠고기 패티 두장, 특별한 소스 양상추 치즈 피클 양파까지", "포카칩", "부대찌개", "해리포터젤리빈", "도토리", "떡볶이", "곤드레비빔밥", "초밥"]
+  
+      if (message.content.startsWith(`${prefix}뭐먹지`)) {
+          let rand = Math.floor(Math.random() * foods.length);
+          message.reply(`${foods[rand]} 어떰?`);
+      };
+  
+      if (message.content.startsWith(`${prefix}음식추가`)) {
+          let addedFood = message.content.split(`${prefix}음식추가 `)[1];
+          foods.push(addedFood);
+          message.reply(`${addedFood} 를 추가했습니다!`);
+      };
+  });
 
   if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
